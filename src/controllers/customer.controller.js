@@ -60,7 +60,13 @@ const CustomerController = {
             if(err) {
                 res.status(500).send(err)
             } else {
-                res.status(200).send(customer)
+                const customers = Customer.find({}, (err, customers) => {
+                    if(err) {
+                        res.status(500).send(err)
+                    } else {
+                        res.status(200).send(customers)
+                    }
+                })
             }
         })
     }

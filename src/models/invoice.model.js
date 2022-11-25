@@ -11,9 +11,11 @@ const Invoice = mongoose.model('Invoice', {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Customer'
     },
-    enum: {
-        values: ['send', 'paid', 'cancel'],
-    }
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    name: String,
 });
 
 
