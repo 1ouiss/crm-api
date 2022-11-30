@@ -9,7 +9,7 @@ const InvoiceController = {
             } else {
                 res.status(200).send(invoices)
             }
-        })
+        }).populate('customer');
     },
     getOneInvoice: async (req, res) => {
         Invoice.findById(req.params.id, (err, invoice) => {
